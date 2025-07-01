@@ -17,18 +17,32 @@ WorkbookSheetLayout = "Layout"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = False
+objExcel.Application.Visible = True
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = False
+objExcel.Application.ScreenUpdating = True
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
 'Abre libro Excel
 Set objWorkbookPathRef = objExcel.Workbooks.Open(WorkbookPathRef, 0)
-Set objWorkbookSheetRefL = objWorkbookPathRef.Worksheets(WorkbookSheetLayout)
 
 Set objWorkbookPathRexmex = objExcel.Workbooks.Open(WorkbookPathRexmex, 0)
 Set objWorkbookSheetRexmex = objWorkbookPathRexmex.Worksheets(WorkbookSheetRexmex)
+
+' Verificar si la hoja WorkbookSheetLayout existe, si existe eliminarla y duplicar la hoja Template
+If SheetExists(objWorkbookPathRef, WorkbookSheetLayout) Then
+    objWorkbookPathRef.Worksheets(WorkbookSheetLayout).Delete
+End If
+' Duplicar la hoja Template y renombrarla a WorkbookSheetLayout
+If SheetExists(objWorkbookPathRef, "Template") Then
+    objWorkbookPathRef.Worksheets("Template").Copy objWorkbookPathRef.Worksheets(objWorkbookPathRef.Worksheets.Count)
+    objWorkbookPathRef.Worksheets(objWorkbookPathRef.Worksheets.Count - 1).Name = WorkbookSheetLayout
+    ' Unhide hoja WorkbookSheetLayout
+    objWorkbookPathRef.Worksheets(WorkbookSheetLayout).Visible = -1 ' -1 = xlSheetVisible
+End If
+
+' Referencia a la hoja de Layout refacturación
+Set objWorkbookSheetRefL = objWorkbookPathRef.Worksheets(WorkbookSheetLayout)
 
 ' Arreglo de hojas de refacturación
 Dim refacturacionSheets, bloque
@@ -54,12 +68,13 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
             objWorkbookSheetRexmex.Rows(1).AutoFilter
         End If
 
+        ActualMonth = CInt(ActualMonth)
         Dim ultimoDiaMes
         ultimoDiaMes = DateSerial(Year(Date), ActualMonth + 1, 0)
-        ultimoDiaMes = Right("0" & Month(ultimoDiaMes),2) & "-" & Right("0" & Day(ultimoDiaMes),2) & "-" & Year(ultimoDiaMes)
+        ultimoDiaMes =  Right("0" & Day(ultimoDiaMes),2) & "-" & Right("0" & Month(ultimoDiaMes),2) & "-" & Year(ultimoDiaMes)
 
         primerDiaMes = DateSerial(Year(Date), ActualMonth, 1)
-        primerDiaMes = Right("0" & Month(primerDiaMes),2) & "-" & Right("0" & Day(primerDiaMes),2) & "-" & Year(primerDiaMes)
+        primerDiaMes = Right("0" & Day(primerDiaMes),2) & "-" & Right("0" & Month(primerDiaMes),2) & "-" & Year(primerDiaMes)
 
 
         ' Encontrar la última fila con datos en la columna a filtrar 
@@ -76,7 +91,7 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
 
         objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(1, 24), objWorkbookSheetRexmex.Cells(lastRow, 24)).AutoFilter _
                                     24, "=" & sheetName
-        
+        MsgBox "Filtrado aplicado a la hoja: " & sheetName
         Set dRange = objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(2, 24), objWorkbookSheetRexmex.Cells(lastRow, 71)).SpecialCells(12)
 
         ' Encontrar la última fila con datos en la hoja de Layout refacturación
@@ -91,6 +106,7 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
         objWorkbookSheetRef.Columns.Hidden = False
 
         objWorkbookSheetRef.Range("A" & lastRowR + 1).PasteSpecial -4163 ' -4163 = xlPasteAll
+        MsgBox "Datos copiados a la hoja: " & sheetName
         ' Quitar el modo de corte/copia
         objExcel.CutCopyMode = False
     End If

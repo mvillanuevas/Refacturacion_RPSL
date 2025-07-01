@@ -84,6 +84,42 @@ With objWorkbookSheetRefLN.UsedRange
 End With
 objExcel.CutCopyMode = False
 
+' Por cada celda en la columna E, buscar si contiene "pep" y eliminar el texto a la derecha a partir de "pep"
+Dim cell
+For Each cell In objWorkbookSheetRefLN.Range("E" & saveLastRow & ":E" & LastRow)
+    If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
+        If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
+            posicion = InStr(1, cell.Value, "pep", vbTextCompare) - 1
+            cell.Value = Left(cell.Value, posicion)
+        End If
+    End If
+Next
+
+refacturacionSheets = Array("BL29", "BL10", "BL11", "BL14")
+' Iteraer sobre las hojas de refacturación y eliminar el contenido desde la fila 2 hasta la última fila
+Dim i
+
+For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
+    Dim sheetName
+    sheetName = refacturacionSheets(i)
+    
+    ' Verificar si la hoja existe en el libro de refacturación
+    If SheetExists(objWorkbookPathRef, sheetName) Then
+        Set objWorkbookSheetRef = objWorkbookPathRef.Worksheets(sheetName)
+        
+        ' Encontrar la última fila con datos en la hoja de Layout refacturación
+        lastRow = objWorkbookSheetRef.Cells(objWorkbookSheetRef.Rows.Count, 1).End(-4162).Row ' -4162 = xlUp
+        
+        ' Limpiar el contenido desde la fila 2 hasta la última fila
+        If lastRow > 1 Then
+            objWorkbookSheetRef.Range("A2:AV" & lastRow).ClearContents
+        End If
+        
+        ' Quitar el modo de corte/copia
+        objExcel.CutCopyMode = False
+    End If
+Next
+
 ' Guardar y cerrar el libro de refacturación
 objWorkbookPathRef.Save
 objWorkbookPathRef.Close

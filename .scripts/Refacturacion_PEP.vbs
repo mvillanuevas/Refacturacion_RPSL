@@ -58,8 +58,8 @@ For rowNum = 1 To totalRows ' Ya que empezamos en A2, este es índice 1
             pepCounterDict.Add agValue, 0
         Else
             pepCounterDict(agValue) = pepCounterDict(agValue) + 1
-            data(rowNum, 33) = agValue & " pep" & pepCounterDict(agValue)
-            results(rowNum) = True ' Marcar para ocultar
+            data(rowNum, 33) = agValue & "pep" & pepCounterDict(agValue)
+            'results(rowNum) = True ' Marcar para ocultar
         End If
 
         ' Duplicado exacto UUID + WBS

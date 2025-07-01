@@ -5,10 +5,12 @@ Set objArgs = WScript.Arguments
 WorkbookPathRexmex = objArgs(0)
 WorkbookPathRef = objArgs(1)
 ActualMonth = objArgs(2)
+FechaRefacturacion = objArgs(3)
 
-'WorkbookPathRexmex = "C:\Users\se109874\OneDrive - Repsol\Documentos\Refacturacion\REXMEX - Cuenta Operativa 2025_120525.xlsx"
-'WorkbookPathRef = "C:\Users\se109874\OneDrive - Repsol\Documentos\Refacturacion\Layout refacturación may-25.xlsx"
+'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\REXMEX - Cuenta Operativa 2025_120525.xlsx"
+'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25.xlsx"
 'ActualMonth = 3
+'FechaRefacturacion = "Mayo 2025"
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -39,8 +41,14 @@ For i = LBound(proveedores) To UBound(proveedores)
 
     Dim copyLastRow, pasteLastRow
     copyLastRow = objWorkbookSheetRef.Cells(objWorkbookSheetRef.Rows.Count, 1).End(-4162).Row
-    pasteLastRow = objWorkbookSheetRefL.Cells(objWorkbookSheetRefL.Rows.Count, 4).End(-4162).Row + 2
 
+    ' Si la ultima fila con datos es 6, entonces pasteLastRow es 7
+    If objWorkbookSheetRefL.Cells(objWorkbookSheetRefL.Rows.Count, 4).End(-4162).Row = 6 Then
+        pasteLastRow = 7
+    Else
+        pasteLastRow = objWorkbookSheetRefL.Cells(objWorkbookSheetRefL.Rows.Count, 4).End(-4162).Row + 2
+    End If
+    
     ' AP (col 42) -> D (col 4)
     objWorkbookSheetRef.Range("AP2:AP" & copyLastRow).SpecialCells(12).Copy
     objWorkbookSheetRefL.Range("D" & pasteLastRow).PasteSpecial -4163
@@ -48,9 +56,10 @@ For i = LBound(proveedores) To UBound(proveedores)
     ' AG (col 33) -> E (col 5)
     objWorkbookSheetRef.Range("AG2:AG" & copyLastRow).SpecialCells(12).Copy
     objWorkbookSheetRefL.Range("E" & pasteLastRow).PasteSpecial -4163
-    
+        
     'Iterar la columna E y validar si la longitud del valor del la celda es menor a 16 y si es asi, cortar los valores hacia la columna F
-    Dim cell, longcell
+    ' Esto para identificar un UUID extragero
+    Dim longcell
     For Each cell In objWorkbookSheetRefL.Range("E" & pasteLastRow & ":E" & pasteLastRow + copyLastRow - 2)
         ' Si el valor de la celda contiene el valor "pep" restar 3 a la longitud del valor de la celda
         If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
@@ -75,8 +84,15 @@ For i = LBound(proveedores) To UBound(proveedores)
     objWorkbookSheetRefL.Range("I" & pasteLastRow).PasteSpecial -4163
 
     ' AH (col 34) -> M (col 13)
+    ' Formato fecha columna AH
+    objWorkbookSheetRef.Range("AH2:AH" & copyLastRow).NumberFormat = "dd-mm-yyyy"
     objWorkbookSheetRef.Range("AH2:AH" & copyLastRow).SpecialCells(12).Copy
     objWorkbookSheetRefL.Range("M" & pasteLastRow).PasteSpecial -4163
+    
+    ' N (col 14)
+    objWorkbookSheetRefL.Range("N" & pasteLastRow).Value = "'" & FechaRefacturacion
+    ' AutoFill N (col 14) to the last row
+    objWorkbookSheetRefL.Range("N" & pasteLastRow).AutoFill objWorkbookSheetRefL.Range("N" & pasteLastRow & ":N" & RowCount)
 
     ' N (col 14) -> O (col 15)
     objWorkbookSheetRef.Range("N2:N" & copyLastRow).SpecialCells(12).Copy
@@ -149,7 +165,9 @@ For i = LBound(proveedores) To UBound(proveedores)
     objWorkbookSheetRefL.Range("AE7").AutoFill objWorkbookSheetRefL.Range("AE7:AE" & fillLastRow)
 
     ' Limpiar una fila vacía antes de pegar los datos
-    objWorkbookSheetRefL.Rows(pasteLastRow - 1).ClearContents
+    If pasteLastRow > 7 Then
+        objWorkbookSheetRefL.Rows(pasteLastRow - 1).ClearContents
+    End If
 
     ' Rellenar con autofill el valor REP en la columna B de objWorkbookSheetRefL
     Dim bStart, bEnd
