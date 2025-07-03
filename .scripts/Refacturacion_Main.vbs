@@ -5,10 +5,12 @@ Set objArgs = WScript.Arguments
 WorkbookPathRexmex = objArgs(0)
 WorkbookPathRef = objArgs(1)
 ActualMonth = objArgs(2)
+TipoDocto = objArgs(3)
 
 'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\REXMEX - Cuenta Operativa 2025_120525.xlsx"
 'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25.xlsx"
 'ActualMonth = 3
+'TipoDocto = "<>NC"
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -87,11 +89,11 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
                                     34, "<>OVERHEAD"
 
         objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(1, 55), objWorkbookSheetRexmex.Cells(lastRow, 55)).AutoFilter _
-                                    55, "<>NC"
+                                    55, TipoDocto
 
         objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(1, 24), objWorkbookSheetRexmex.Cells(lastRow, 24)).AutoFilter _
                                     24, "=" & sheetName
-        MsgBox "Filtrado aplicado a la hoja: " & sheetName
+        
         Set dRange = objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(2, 24), objWorkbookSheetRexmex.Cells(lastRow, 71)).SpecialCells(12)
 
         ' Encontrar la última fila con datos en la hoja de Layout refacturación
@@ -106,7 +108,7 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
         objWorkbookSheetRef.Columns.Hidden = False
 
         objWorkbookSheetRef.Range("A" & lastRowR + 1).PasteSpecial -4163 ' -4163 = xlPasteAll
-        MsgBox "Datos copiados a la hoja: " & sheetName
+        
         ' Quitar el modo de corte/copia
         objExcel.CutCopyMode = False
     End If

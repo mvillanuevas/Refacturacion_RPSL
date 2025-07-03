@@ -6,6 +6,7 @@ WorkbookPathRexmex = objArgs(0)
 WorkbookPathRef = objArgs(1)
 ActualMonth = objArgs(2)
 saveLastRow = objArgs(3)
+WorkbookPathLayout = objArgs(4)
 
 'WorkbookPathRexmex = "C:\Users\se109874\OneDrive - Repsol\Documentos\Refacturacion\REXMEX - Cuenta Operativa 2025_120525.xlsx"
 'WorkbookPathRef = "C:\Users\se109874\OneDrive - Repsol\Documentos\Refacturacion\Layout refacturación may-25.xlsx"
@@ -119,9 +120,8 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
         objExcel.CutCopyMode = False
     End If
 Next
-
-' Guardar y cerrar el libro de refacturación
-objWorkbookPathRef.Save
+' Guardar con otro nombre el libro de refacturación
+objWorkbookPathRef.SaveAs WorkbookPathLayout, 51 ' 51 = xlOpenXMLWorkbook (xlsx)
 objWorkbookPathRef.Close
 ' Cerrar la aplicación de Excel
 objExcel.Quit
