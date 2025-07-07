@@ -4,13 +4,15 @@ Set objArgs = WScript.Arguments
 
 WorkbookPathRexmex = objArgs(0)
 WorkbookPathRef = objArgs(1)
-ActualMonth = objArgs(2)
+ActualMonth = CInt(objArgs(2))
 TipoDocto = objArgs(3)
+anio = CInt(objArgs(4))
 
 'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\REXMEX - Cuenta Operativa 2025_120525.xlsx"
 'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25.xlsx"
 'ActualMonth = 3
 'TipoDocto = "<>NC"
+'anio = 2025
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -72,10 +74,10 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
 
         ActualMonth = CInt(ActualMonth)
         Dim ultimoDiaMes
-        ultimoDiaMes = DateSerial(Year(Date), ActualMonth + 1, 0)
+        ultimoDiaMes = DateSerial(anio, ActualMonth + 1, 0)
         ultimoDiaMes =  Right("0" & Day(ultimoDiaMes),2) & "-" & Right("0" & Month(ultimoDiaMes),2) & "-" & Year(ultimoDiaMes)
 
-        primerDiaMes = DateSerial(Year(Date), ActualMonth, 1)
+        primerDiaMes = DateSerial(anio, ActualMonth, 1)
         primerDiaMes = Right("0" & Day(primerDiaMes),2) & "-" & Right("0" & Month(primerDiaMes),2) & "-" & Year(primerDiaMes)
 
 
