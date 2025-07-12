@@ -76,13 +76,12 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1218,838.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1085,1027" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExceptionTask" />
       <Variable x:TypeArguments="x:Boolean" Name="StatusTask" />
       <Variable x:TypeArguments="x:String" Name="ActualMonth" />
       <Variable x:TypeArguments="x:String" Name="WorkbookPathRef" />
-      <Variable x:TypeArguments="x:String" Name="WorkbookPathRexmex" />
       <Variable x:TypeArguments="x:String" Name="FechaRefacturacion" />
       <Variable x:TypeArguments="x:String" Name="WorkBookNC" />
       <Variable x:TypeArguments="x:String" Name="WorkBook" />
@@ -91,29 +90,59 @@
       <Variable x:TypeArguments="x:String" Name="colNames" />
       <Variable x:TypeArguments="x:String" Name="wsNames" />
       <Variable x:TypeArguments="x:String" Name="excelFilePath" />
+      <Variable x:TypeArguments="x:String" Name="FinalPath" />
+      <Variable x:TypeArguments="x:String" Name="WorkbookSheetOverhead" />
+      <Variable x:TypeArguments="x:String" Name="Anio" />
+      <Variable x:TypeArguments="x:String" Name="WorkBookPathOverhead" />
+      <Variable x:TypeArguments="x:String" Name="WorkBookPathRexmex" />
+      <Variable x:TypeArguments="x:String" Name="WorkBookRefacturacion" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,365" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[WorkbookPathRef]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[FinalPath]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[WorkbookPathRexmex]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[WorkbookSheetOverhead]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\REXMEX - Cuenta Operativa 2025_120525.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">Sheet2</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[Anio]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">2025</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[WorkBookPathOverhead]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\REXM - Overhead facturable MMyyyy.xlsx</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[FechaRefacturacion]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Mayo 2025</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -121,47 +150,49 @@
               <OutArgument x:TypeArguments="x:String">[ActualMonth]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">3</InArgument>
+              <InArgument x:TypeArguments="x:String">4</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[WorkBookFact]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[WorkbookPathRef]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25_Fact.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[WorkBookNC]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[WorkbookPathRexmex]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Layout refacturación may-25_NC.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Cuenta Operativa.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Refacturacion - Invoke Workflow File (Procesos\Refacturacion.xaml)" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Refacturacion.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Refacturacion - Invoke Workflow File (Procesos\Refacturacion.xaml)" sap:VirtualizedContainerService.HintSize="479,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Procesos\Refacturacion.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="WorkBookNC">[WorkBookNC]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="WorkBookFact">[WorkBookFact]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="FinalPath">[FinalPath]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="WorkBookSheetOverhead">[WorkbookSheetOverhead]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Anio">[Anio]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="WorkBookPathOverhead_Temp">[WorkBookPathOverhead]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="FechaRefacturacion">[FechaRefacturacion]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="ExceptionTask">[ExceptionTask]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="StatusTask">[StatusTask]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="ActualMonth">[ActualMonth]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="WorkbookPathRef">[WorkbookPathRef]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="WorkbookPathRexmex">[WorkbookPathRexmex]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="WorkBookPathRefacturacion_Temp">[WorkBookPathRef]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="WorkBookPathRexmex">[WorkBookPathRexmex]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[Not StatusTask]" DisplayName="If Exception" sap:VirtualizedContainerService.HintSize="434,331" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not StatusTask]" DisplayName="If Exception" sap:VirtualizedContainerService.HintSize="479,387" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +210,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,7 +220,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Comment Out Validacion Homologacion" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out Validacion Homologacion" sap:VirtualizedContainerService.HintSize="479,75" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,222" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>

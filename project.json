@@ -4,7 +4,9 @@
   "description": "Refacturacion",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[25.4.4]"
+    "UiPath.Python.Activities": "[1.10.0]",
+    "UiPath.System.Activities": "[25.4.4]",
+    "UiPath.UIAutomation.Activities": "[25.10.8]"
   },
   "webServices": [],
   "entitiesStores": [],

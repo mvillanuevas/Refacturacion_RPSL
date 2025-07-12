@@ -1,0 +1,235 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Timbrado_CFDI" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="RutaXML" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Timbrado_CFDI_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Timbrado_CFDI" sap:VirtualizedContainerService.HintSize="1218,652.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ApplicationPath_CFDI">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\HE678HU\AppData\Local\Apps\2.0\D4MXNPHD.N23\3N63CY2A.5M5\eyti..tion_de82518fbe9ca90c_0001.0000_842a6c8b1d223f4b\eytimbrado.exe</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="CFDI" sap:VirtualizedContainerService.HintSize="450,131" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Timbrado CFDI" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="20bdeb0f-5078-454e-a788-55fbb81cce9f" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1016" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Productivo''" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="20bdeb0f-5078-454e-a788-55fbb81cce9f" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="f57003b3-3299-4b84-b53c-2d3de47d43d5" CvElementArea="462, 78, 17, 17" CvTextArea="482, 80, 52, 12" CvTextArgument="Productivo" CvType="RadioButton" DesignTimeRectangle="464, 78, 76, 17" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;wnd ctrlname='grpAmbiente' aaname='Ambiente' title='Ambiente' /&gt;&lt;wnd ctrlname='rdbProductivo' aaname='Productivo' title='Productivo' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpAmbiente' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='rdbProductivo' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:fulltext='Productivo' /&gt;" Guid="c5c7b141-8bdd-48c7-92cf-1a26d9b943af" InformativeScreenshot="321f4f6d0af62994cee0e1c1a42350e5.png" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''EY''" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="20bdeb0f-5078-454e-a788-55fbb81cce9f" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="f57003b3-3299-4b84-b53c-2d3de47d43d5" CvElementArea="170, 78, 17, 17" CvTextArea="190, 80, 16, 12" CvTextArgument="EY" CvType="RadioButton" DesignTimeRectangle="172, 78, 39, 17" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;wnd ctrlname='grpContrato' aaname='Contrato' title='Contrato' /&gt;&lt;wnd ctrlname='rdbRepsol' aaname='Repsol' title='Repsol' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpContrato' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='rdbEy' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:fulltext='EY' /&gt;" Guid="3529ae0f-f928-43e6-9dd4-30100fcdc26d" InformativeScreenshot="b24755d94d97f2230a7eb3791fca4795.png" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into ''Ruta de XML''" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="20bdeb0f-5078-454e-a788-55fbb81cce9f" Text="[RutaXML]" Version="V5">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="f57003b3-3299-4b84-b53c-2d3de47d43d5" CvElementArea="16, 144, 585, 21" CvType="InputBox" DesignTimeRectangle="18, 145, 582, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='txtRuta' automationid='txtRuta' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtRuta' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;" Guid="b2120cac-dea9-4dd2-9f76-58c5d9a71850" InformativeScreenshot="9efb489c28eb1d0a0d3bce5c2fe8ef15.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="f57003b3-3299-4b84-b53c-2d3de47d43d5" CvTextArea="20, 129, 64, 12" CvTextArgument="Ruta de XML" CvType="Text" DesignTimeRectangle="18, 129, 70, 13" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='lblRuta' aaname='Ruta de XML' title='Ruta de XML' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblRuta' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='Ruta de XML' /&gt;" Guid="c45b2871-df2d-453c-a8c5-6815458cc392" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.VerifyOptions>
+                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                  </uix:VerifyExecutionTypeIntoOptions>
+                </uix:NTypeInto.VerifyOptions>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Enviar''" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="20bdeb0f-5078-454e-a788-55fbb81cce9f" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="f57003b3-3299-4b84-b53c-2d3de47d43d5" CvElementArea="526, 184, 73, 27" CvTextArea="545, 191, 32, 12" CvTextArgument="Enviar" CvType="Button" DesignTimeRectangle="525, 184, 74, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='btnEnviar' aaname='Enviar' title='Enviar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='btnEnviar' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='Enviar' /&gt;" Guid="8e9e1a47-2d06-4c62-852b-a5e8758884dd" InformativeScreenshot="047ff5093b44d5e49a00915116c8ecd0.png" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="2150, 173, 616, 228" FilePath="[ApplicationPath_CFDI]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALeSURBVFhH1ZfJr0xBFIcfiYVZzMOGpRUbNkgsDCuRWGBBJOYpQUjMIhFi/gdICBv+AyzYIAQhrEiIIVizME/f1++dpLq77s3t7mfxfsmXvjXcqnOrTp063dUXNQbmwybY34PP1tn2XzQENsAd+AF/C7DNPvYdDB2rP6yHD5CbsAzfWQf9oC2NhRvQOPB3uA/n4RgchXNwD2xr7H8dWt6aKfAC0oFewzYoG2w0bIVXkL77HCbDAbgFN2EaZOWXp5P/ghPQyp4OAlfmJ6RGPEzKi6FJ7le67N9gCbSrRfAFYryUrAF6b3TwyzuZPKQR6UoETQZ41D5CdDgJVbUcjAcufU5HIJ1cmgzYCNH4Bqru+TD4DJ/Aj8hpILyEUgPuQjTusKKiVoLvXKqVirUZYnypM8CjFRHO33FQpMbAEk5rKC4LOiNBp84a4NLthYOwxoqM3N9TMKtW6tYk0FnfwgCYDfpOkS+sAucwHky0oqpmwjPQ8jlW9GgXWKdhai5Ytq/v9IpcmdieK6DThZ7AH4ioNhyugn0Ny3ugYzlIxHgHHwFqOjj541qpW7alBuyGXlG6BS6zOg2Wd9ZK3YoteAozrKiq8XAIDsNqKzLyLOtgOpoO9w50wNSZbPPesG9OXu3OoRPWxYyFoOXiURkFRfKoLQD7etWmKjuGEyBCsj5Vd6umBsgWKNNlsN+KWqma4sSIWVOdGg0wbBad5aEQodfnKrKfWxbje+nVqdEA8T7PScO8eJbVStV0FmJcU7WmOyNngPvVdGG0oaXwG2Jc88Qm5QyQr9CJEU6e5onXIOuoqQEPwPQpyh6149BKSuaen4H0yx2zMJ+cCiaKJoyeURPI1AgxKd0O5oxFMp4YmFKHk0hKW5LWumTpQOIZdpUugEFHLsIjiDsjxTHKMulSuV9roZ0/Ju/Bd8uCU2W5/4bR25D7ykCHs499e+WvWU7++ZgH5pD7evDZOtv6krq6/gHDsCGKYQ4Y0QAAAABJRU5ErkJggg==" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="d70f42e65d84a1f3fd64373bed8272d5.png" Selector="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
