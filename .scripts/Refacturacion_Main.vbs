@@ -1,18 +1,18 @@
-On Error Resume Next
+'On Error Resume Next
 
-Set objArgs = WScript.Arguments
+'Set objArgs = WScript.Arguments
 
-WorkbookPathRexmex = objArgs(0)
-WorkbookPathRef = objArgs(1)
-ActualMonth = CInt(objArgs(2))
-TipoDocto = objArgs(3)
-anio = CInt(objArgs(4))
+'WorkbookPathRexmex = objArgs(0)
+'WorkbookPathRef = objArgs(1)
+'ActualMonth = CInt(objArgs(2))
+'TipoDocto = objArgs(3)
+'anio = CInt(objArgs(4))
 
-'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Cuenta Operativa.xlsx"
-'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
-'ActualMonth = 4
-'TipoDocto = "=NC"
-'anio = 2025
+WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725.xlsx"
+WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
+ActualMonth = 6
+TipoDocto = "=NC"
+anio = 2025
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -85,8 +85,10 @@ For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
         ' Encontrar la última fila con datos en la columna a filtrar 
         lastRow = objWorkbookSheetRexmex.Cells(objWorkbookSheetRexmex.Rows.Count, 1).End(-4162).Row ' -4162 = xlUp
 
+        objWorkbookSheetRexmex.Range("AA2:AA" & lastRow).NumberFormat = "dd/mm/yyyy"
+
         objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(1, 27), objWorkbookSheetRexmex.Cells(lastRow, 27)).AutoFilter _
-                                    27, ">=" & CDbl(CDate(primerDiaMes)), 1, "<=" & CDbl(CDate(ultimoDiaMes)), 1
+                                    27, ">=" & CDbl(CDate(primerDiaMes)), 1, "<=" & CDbl(CDate(ultimoDiaMes))
 
         objWorkbookSheetRexmex.Range(objWorkbookSheetRexmex.Cells(1, 34), objWorkbookSheetRexmex.Cells(lastRow, 34)).AutoFilter _
                                     34, "<>OVERHEAD"
