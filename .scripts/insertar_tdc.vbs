@@ -3,10 +3,10 @@ On Error Resume Next
 Set objArgs = WScript.Arguments
 
 fecha = CDate(objArgs(0))
-valorEUR_USD = CDbl(objArgs(1))
-valorEUR_MXN = CDbl(objArgs(2))
-valorGBP_USD = CDbl(objArgs(3))
-valorGBP_MXN = CDbl(objArgs(4))
+valorEUR_USD = objArgs(1)
+valorEUR_MXN = objArgs(2)
+valorGBP_USD = objArgs(3)
+valorGBP_MXN = objArgs(4)
 WorkbookRefacturacion = objArgs(5)
 
 'Genera un objeto de tipo Excel Application

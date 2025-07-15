@@ -89,8 +89,14 @@ def get_tdc_banxico_usd():
             elif serie["idSerie"] == "SF43718":
                     serie["titulo"] = "Determinacion"
             nombre = serie["titulo"]
-            valor = serie["datos"][0]["dato"] if serie["datos"] else "Sin dato"
-            fecha = serie["datos"][0]["fecha"] if serie["datos"] else fecha_actual
+            try:
+                # Si hay datos, extraer el valor y la fecha
+                valor = serie["datos"][0]["dato"]
+                fecha = serie["datos"][0]["fecha"]
+            except:
+                # Si no hay datos, asignar valores por defecto
+                valor = "N/E"
+                fecha = datetime.now().strftime("%d/%m/%Y")
             #Concatenear serie_id, nombre, valor y fecha para que se una sola variable
             if tc:  # If tc already has content, add separator
                 tc = f"{nombre}:{valor}:{fecha}" + ";" + tc
@@ -111,7 +117,10 @@ def get_tdc_banxico_usd():
         serie = data.get("bmx", {}).get("series", [])[0]
         serie["titulo"] = "DOF"
         nombre = serie["titulo"]
-        valor = serie["datos"][0]["dato"] if serie["datos"] else "Sin dato"
+        try:
+            valor = serie["datos"][0]["dato"]
+        except:
+            valor = "N/E"
         tdc = f"{nombre}:{valor}:{tmp}"
         return f"{tc};{tdc}"
     else:

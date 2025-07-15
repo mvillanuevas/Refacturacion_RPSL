@@ -3,9 +3,9 @@ On Error Resume Next
 Set objArgs = WScript.Arguments
 
 fecha = objArgs(0)
-valorDetermina = CDbl(objArgs(1))
-valorDOF = CDbl(objArgs(2))
-valorSolventa = CDbl(objArgs(3))
+valorDetermina = objArgs(1)
+valorDOF = objArgs(2)
+valorSolventa = objArgs(3)
 WorkbookRefacturacion = objArgs(4)
 
 'fecha = "09/07/2025"

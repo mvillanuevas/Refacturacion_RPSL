@@ -19,9 +19,9 @@ WorkbookSheetLayout = "Layout"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = False
+objExcel.Application.Visible = True
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = False
+objExcel.Application.ScreenUpdating = True
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
