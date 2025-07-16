@@ -29,9 +29,7 @@
     {
       "Path": "Procesos/Timbrado_OH.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Folio&Sequence_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
@@ -39,7 +37,7 @@
     {
       "Path": "Procesos/Timbrado_Inputs.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": null,
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
@@ -47,7 +45,7 @@
     {
       "Path": "Procesos/Timbrado_TDC.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": null,
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
@@ -55,7 +53,7 @@
     {
       "Path": "Procesos/Timbrado.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": null,
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null

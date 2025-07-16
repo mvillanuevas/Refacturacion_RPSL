@@ -20590,15 +20590,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HE678HU\\.nuget\\packages\\": {}
+    "C:\\Users\\se109874\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Refacturacion",
       "projectName": "Refacturacion",
-      "projectPath": "C:\\Users\\HE678HU\\OneDrive - EY\\Documents\\UiPath\\Refacturacion_RPSL\\.local",
-      "packagesPath": "C:\\Users\\HE678HU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HE678HU\\OneDrive - EY\\Documents\\UiPath\\Refacturacion_RPSL\\.local",
+      "projectPath": "C:\\Users\\se109874\\OneDrive - Repsol\\Documentos\\UiPath\\Refacturacion_RPSL\\.local",
+      "packagesPath": "C:\\Users\\se109874\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\se109874\\OneDrive - Repsol\\Documentos\\UiPath\\Refacturacion_RPSL\\.local",
       "UsingMicrosoftNETSdk": false,
       "restoreAuditProperties": {
         "enableAudit": "False"
@@ -20628,7 +20628,7 @@
             "version": "[25.10.8, 25.10.8]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\HE678HU\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\se109874\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
