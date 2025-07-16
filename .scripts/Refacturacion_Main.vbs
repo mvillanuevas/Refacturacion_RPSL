@@ -1,18 +1,18 @@
-'On Error Resume Next
+On Error Resume Next
 
-'Set objArgs = WScript.Arguments
+Set objArgs = WScript.Arguments
 
-'WorkbookPathRexmex = objArgs(0)
-'WorkbookPathRef = objArgs(1)
-'ActualMonth = CInt(objArgs(2))
-'TipoDocto = objArgs(3)
-'anio = CInt(objArgs(4))
+WorkbookPathRexmex = objArgs(0)
+WorkbookPathRef = objArgs(1)
+ActualMonth = CInt(objArgs(2))
+TipoDocto = objArgs(3)
+anio = CInt(objArgs(4))
 
-WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725.xlsx"
-WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
-ActualMonth = 6
-TipoDocto = "=NC"
-anio = 2025
+'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725.xlsx"
+'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
+'ActualMonth = 6
+'TipoDocto = "=NC"
+'anio = 2025
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -45,6 +45,8 @@ If SheetExists(objWorkbookPathRef, "Template") Then
     ' Unhide hoja WorkbookSheetLayout
     objWorkbookPathRef.Worksheets(WorkbookSheetLayout).Visible = -1 ' -1 = xlSheetVisible
 End If
+
+objWorkbookSheetRexmex.ShowAllData
 
 ' Referencia a la hoja de Layout refacturación
 Set objWorkbookSheetRefL = objWorkbookPathRef.Worksheets(WorkbookSheetLayout)

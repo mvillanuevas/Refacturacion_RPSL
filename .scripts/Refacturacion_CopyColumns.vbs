@@ -80,8 +80,8 @@ For i = LBound(proveedores) To UBound(proveedores)
         objWorkbookSheetRefL.Range("L" & pasteLastRow).PasteSpecial -4163
 
         ' AI (col 35) -> I (col 9)
-        objWorkbookSheetRef.Range("AI2:AI" & copyLastRow).SpecialCells(12).Copy
-        objWorkbookSheetRefL.Range("I" & pasteLastRow).PasteSpecial -4163
+        'objWorkbookSheetRef.Range("AI2:AI" & copyLastRow).SpecialCells(12).Copy
+        'objWorkbookSheetRefL.Range("I" & pasteLastRow).PasteSpecial -4163
 
         ' AH (col 34) -> M (col 13)
         ' Formato fecha columna AH
@@ -92,7 +92,7 @@ For i = LBound(proveedores) To UBound(proveedores)
         ' N (col 14)
         objWorkbookSheetRefL.Range("N" & pasteLastRow).Value = "'" & FechaRefacturacion
         ' AutoFill N (col 14) to the last row
-        objWorkbookSheetRefL.Range("N" & pasteLastRow).AutoFill objWorkbookSheetRefL.Range("N" & pasteLastRow & ":N" & RowCount)
+        objWorkbookSheetRefL.Range("N" & pasteLastRow).AutoFill objWorkbookSheetRefL.Range("N" & pasteLastRow & ":N" & RowCount), 1
 
         ' N (col 14) -> O (col 15)
         objWorkbookSheetRef.Range("N2:N" & copyLastRow).SpecialCells(12).Copy
@@ -149,6 +149,9 @@ For i = LBound(proveedores) To UBound(proveedores)
         Dim fillLastRow
         fillLastRow = objWorkbookSheetRefL.Cells(objWorkbookSheetRefL.Rows.Count, 4).End(-4162).Row
 
+        ' C (col 3)
+        objWorkbookSheetRefL.Range("C7").FormulaR1C1 = "=IFNA(VLOOKUP(RC[-2],Contratos!C[-2]:C[-1],2,FALSE)," & Chr(34) & Chr(34) & ")"
+        objWorkbookSheetRefL.Range("C7").AutoFill objWorkbookSheetRefL.Range("C7:C" & fillLastRow)
         ' S (col 19)
         objWorkbookSheetRefL.Range("S7").AutoFill objWorkbookSheetRefL.Range("S7:S" & fillLastRow)
         ' T (col 20)

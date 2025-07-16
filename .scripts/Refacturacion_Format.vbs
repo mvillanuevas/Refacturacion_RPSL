@@ -80,6 +80,8 @@ If saveLastRow >= 7 Then
     ' Aplicar formato fecha corta a la columna M de la hoja objWorkbookSheetRefL
     objWorkbookSheetRefL.Range("M7:M" & LastRow).NumberFormat = "dd/mm/yyyy"
 
+    objWorkbookSheetRefL.Range("AH7:AH" & LastRow).NumberFormat = "dd/mm/yyyy"
+
     Set objWorkbookSheetRefLN = objWorkbookPathRef.Worksheets(sheetName)
 
     ' Copiar y pegar como valores todas las celdas de una hoja
@@ -120,6 +122,7 @@ If saveLastRow >= 7 Then
 
     ' Aplicar formato fecha corta a la columna M de la hoja objWorkbookSheetRefL
     objWorkbookSheetRefLN.Range("M7:M" & LastRow).NumberFormat = "dd/mm/yyyy"
+    objWorkbookSheetRefLN.Range("AH7:AH" & LastRow).NumberFormat = "dd/mm/yyyy"
 
     refacturacionSheets = Array("BL29", "BL10", "BL11", "BL14")
     ' Iteraer sobre las hojas de refacturación y eliminar el contenido desde la fila 2 hasta la última fila
@@ -148,6 +151,7 @@ If saveLastRow >= 7 Then
 Else
     On Error GoTo 0
 End If
+
 ' Guardar con otro nombre el libro de refacturación
 objWorkbookPathRef.SaveAs WorkbookPathLayout, 51 ' 51 = xlOpenXMLWorkbook (xlsx)
 objWorkbookPathRef.Close

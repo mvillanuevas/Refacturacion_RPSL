@@ -9,11 +9,11 @@ hojaDestinoNombre = objArgs(2) ' Ej: "INPUT"
 anio = objArgs(3) ' Ej: "2025"
 mes = objArgs(4) ' Ej: "5"
 
-'libroOrigen = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturaciónMayo 2025_FACT.xlsx"
+'libroOrigen = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación Junio 2025_NC.xlsx"
 'libroDestino = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\Timbrado\Refacturacion_regular_v2.xlsm"
-'hojaDestinoNombre = "INPUT"
+'hojaDestinoNombre = "INPUT NC"
 'anio = "2025" ' Ej: "2025"
-'mes = "4" ' Ej: "5"
+'mes = "6" ' Ej: "5"
 
 hojaOrigenNombre = "Layout_Copy"
 
@@ -21,9 +21,9 @@ hojaOrigenNombre = "Layout_Copy"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = False
+objExcel.Application.Visible = True
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = False
+objExcel.Application.ScreenUpdating = True
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 

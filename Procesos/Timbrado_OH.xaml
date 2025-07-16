@@ -129,13 +129,13 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado_OH" sap:VirtualizedContainerService.HintSize="1218,652.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado_OH" sap:VirtualizedContainerService.HintSize="1212,1587" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="OH_Hidrocarburos" sap:VirtualizedContainerService.HintSize="450,416" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="OH_Hidrocarburos" sap:VirtualizedContainerService.HintSize="549,1564" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:DatabaseConnection" Name="DB_Connection" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_OH" />
@@ -148,7 +148,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Hidrocarburos" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch Hidrocarburos" sap:VirtualizedContainerService.HintSize="515,84" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -165,9 +165,7 @@
             <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\Hidrocarburos.vbs" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_1" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
               <ui:InvokeVBScript.Arguments>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + WorkbookPathRefacturacionRegular + &quot;&quot;&quot;&quot;" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String">["""" + WorkbookPathRefacturacionRegular + """"]</InArgument>
                 </scg:List>
               </ui:InvokeVBScript.Arguments>
             </ui:InvokeVBScript>
@@ -265,21 +263,21 @@
           </Sequence>
         </TryCatch.Finally>
       </TryCatch>
-      <TryCatch DisplayName="Try Catch Extract Folio" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch Extract Folio" sap:VirtualizedContainerService.HintSize="515,910" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,279" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,360" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=XWH0SY1T3;Integrated Security=True;Encrypt=False" DatabaseConnection="[DB_Connection]">
+            <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="479,84" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=XWH0SY1T3;Integrated Security=True;Encrypt=False" DatabaseConnection="[DB_Connection]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -287,7 +285,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:DatabaseConnect>
-            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[dt_OH]" DisplayName="Run Query" ExistingDbConnection="[DB_Connection]" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="SELECT MAX(Folio) AS MaxFolio FROM ReporteRegulatorio.dbo.Overhead">
+            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[dt_OH]" DisplayName="Run Query" ExistingDbConnection="[DB_Connection]" sap:VirtualizedContainerService.HintSize="479,84" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="SELECT MAX(Folio) AS MaxFolio FROM ReporteRegulatorio.dbo.Overhead">
               <ui:ExecuteQuery.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:ExecuteQuery.Parameters>
@@ -299,7 +297,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:ExecuteQuery>
             <ui:DatabaseDisconnect DatabaseConnection="[DB_Connection]" DisplayName="Disconnect from Database" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_OH]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_OH]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="479,75" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -380,7 +378,7 @@
           </Sequence>
         </TryCatch.Finally>
       </TryCatch>
-      <TryCatch DisplayName="Try Catch OH" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch OH" sap:VirtualizedContainerService.HintSize="515,84" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -397,18 +395,10 @@
             <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\OH_Refacturacion.vbs" sap:VirtualizedContainerService.HintSize="418,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_2" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
               <ui:InvokeVBScript.Arguments>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + WorkbookPathRefacturacionRegular + &quot;&quot;&quot;&quot;" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + WorkbookPathOH + &quot;&quot;&quot;&quot;" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + Periodo + &quot;&quot;&quot;&quot;" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + Folio.ToString() + &quot;&quot;&quot;&quot;" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String">["""" + WorkbookPathRefacturacionRegular + """"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["""" + WorkbookPathOH + """"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["""" + Periodo + """"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["""" + Folio.ToString() + """"]</InArgument>
                 </scg:List>
               </ui:InvokeVBScript.Arguments>
             </ui:InvokeVBScript>
@@ -509,7 +499,14 @@
           </Sequence>
         </TryCatch.Finally>
       </TryCatch>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[New_Folio]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="New Folio" sap:VirtualizedContainerService.HintSize="515,117" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[New_Folio]" />
+      <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="515,92" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=XWH0SY1T3;Initial Catalog=ReporteRegulatorio;Integrated Security=True;Encrypt=False" DatabaseConnection="[DB_Connection]" />
+      <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query" ExistingDbConnection="[DB_Connection]" sap:VirtualizedContainerService.HintSize="515,146" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;INSERT INTO ReporteRegulatorio.dbo.Overhead (Folio) VALUES(&quot; + New_Folio + &quot;);&quot;]">
+        <ui:ExecuteQuery.Parameters>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:ExecuteQuery.Parameters>
+      </ui:ExecuteQuery>
+      <ui:DatabaseDisconnect DatabaseConnection="[DB_Connection]" DisplayName="Disconnect from Database" sap:VirtualizedContainerService.HintSize="515,48" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
     </Sequence>
   </Sequence>
 </Activity>
