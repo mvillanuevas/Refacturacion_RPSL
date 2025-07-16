@@ -73,7 +73,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1218,652.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1341,838.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExceptionTask" />
       <Variable x:TypeArguments="x:Boolean" Name="StatusTask" />
@@ -98,7 +98,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación Junio 2025_FACT.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\se109874\OneDrive - Repsol\Documentos\Timbrado\Refacturacion_Test\Layout refacturación Junio 2025_FACT.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -106,7 +106,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout_NC]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación Junio 2025_NC.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\se109874\OneDrive - Repsol\Documentos\Timbrado\Refacturacion_Test\Layout refacturación Junio 2025_NC.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -114,7 +114,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookRefacturacion]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\Timbrado\Refacturacion_regular_v2.xlsm</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\se109874\OneDrive - Repsol\Documentos\Timbrado\Timbrado\Refacturacion_regular_v2.xlsm</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -138,7 +138,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkbookPathOH]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXM - Overhead facturable Junio 2025.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\Users\se109874\OneDrive - Repsol\Documentos\Timbrado\Refacturacion_Test\REXM - Overhead facturable Junio 2025.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -246,8 +246,8 @@
         <InArgument x:TypeArguments="x:String" x:Key="Periodo">[Periodo]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="WorkbookPathOH">[WorkbookPathOH]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="WorkbookPathRefacturacionRegular">[WorkBookRefacturacion]</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="StatusTask">[StatusTask]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ExceptionTask">[ExceptionTask]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="StatusTask">[StatusTask]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="ExceptionTask">[ExceptionTask]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <If Condition="[Not StatusTask]" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="If_3">
