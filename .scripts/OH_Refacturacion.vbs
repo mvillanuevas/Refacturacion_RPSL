@@ -8,7 +8,7 @@ periodo = objArgs(2)
 Folio = objArgs(3)
 
 'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\Timbrado\Refacturacion_regular_v2.xlsm"
-'WorkbookPathOH = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXM - Overhead facturable Mayo 2025.xlsx"
+'WorkbookPathOH = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXM - Overhead facturable Junio 2025.xlsx"
 'periodo = "Mayo 2025"
 'Folio = "618"
 
@@ -27,7 +27,7 @@ Set objWorkbookPathRef = objExcel.Workbooks.Open(WorkbookPathRef, 0)
 Set objWorkbookSheetRef= objWorkbookPathRef.Worksheets("OH")
 
 Set objWorkbookPathOH = objExcel.Workbooks.Open(WorkbookPathOH, 0)
-Set objWorkbookSheetOH= objWorkbookPathOH.Worksheets("Sheet2")
+Set objWorkbookSheetOH = objWorkbookPathOH.Worksheets("Sheet2")
 
 Const xlPart = 2
 Const xlValues = -4163
@@ -56,7 +56,7 @@ If Not foundCell Is Nothing Then
     Next
     ' Ultima fila
     lastRowOH = objWorkbookSheetRef.Cells(objWorkbookSheetRef.Rows.Count, 3).End(-4162).Row
-    objWorkbookSheetRef.Range("A2:C2").AutoFill objWorkbookSheetRef.Range("A2:C" & lastRowOH), 1
+    objWorkbookSheetRef.Range("A2:B2").AutoFill objWorkbookSheetRef.Range("A2:B" & lastRowOH), 1
     objWorkbookSheetRef.Range("E2:AB2").AutoFill objWorkbookSheetRef.Range("E2:AB" & lastRowOH), 1
     objWorkbookSheetRef.Range("AD2:GC2").AutoFill objWorkbookSheetRef.Range("AD2:GC" & lastRowOH), 1
 

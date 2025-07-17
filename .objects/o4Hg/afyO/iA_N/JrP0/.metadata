@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Contrato",
+  "Type": "Element",
+  "TaxonomyType": "RadioButton",
+  "Id": "JrP0cuaWRUKHOkhF9HnovQ",
+  "Reference": "LlLgfoQpLUq-tToeno2L6w/JrP0cuaWRUKHOkhF9HnovQ",
+  "ParentRef": "LlLgfoQpLUq-tToeno2L6w/iA_NSie4_ESwIzT2Jm9k0Q",
+  "Created": "2025-07-16T16:31:24.1966506Z",
+  "Updated": "2025-07-16T16:31:24.1966506Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

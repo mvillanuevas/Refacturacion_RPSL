@@ -142,13 +142,13 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado_Inputs" sap:VirtualizedContainerService.HintSize="1218,652.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado_Inputs" sap:VirtualizedContainerService.HintSize="1212,772" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Insertar Inputs" sap:VirtualizedContainerService.HintSize="450,578" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Insertar Inputs" sap:VirtualizedContainerService.HintSize="450,749" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="Sheet" />
         <Variable x:TypeArguments="x:String" Name="vbsResult" />
@@ -159,6 +159,14 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Timbrado_Inputs&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
       <Assign sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[StatusTask]</OutArgument>
@@ -173,6 +181,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Valida si existe: &quot; + WorkBookLayout]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
       <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Layout" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[WorkBookLayout]" PathType="File">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -189,27 +205,27 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,771" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,108" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch INPUT" sap:VirtualizedContainerService.HintSize="479,711" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch INPUT" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="468,457" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,514" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign Sheet" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign DisplayName="Assign Sheet" sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[Sheet]</OutArgument>
                     </Assign.To>
@@ -217,7 +233,15 @@
                       <InArgument x:TypeArguments="x:String">INPUT</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\CopiarLayout.vbs" sap:VirtualizedContainerService.HintSize="434,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_1" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;CopiarLayout.vbs&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\CopiarLayout.vbs" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_1" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
                     <ui:InvokeVBScript.Arguments>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="8">
                         <InArgument x:TypeArguments="x:String">["""" + WorkBookLayout + """"]</InArgument>
@@ -228,7 +252,7 @@
                       </scg:List>
                     </ui:InvokeVBScript.Arguments>
                   </ui:InvokeVBScript>
-                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="Delay_1">
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="Delay_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -236,7 +260,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Delay>
-                  <If Condition="[vbsResult.Contains(&quot;Error&quot;)]" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[vbsResult.Contains(&quot;Error&quot;)]" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -279,7 +303,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,344" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,401" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,6 +332,14 @@
                           </scg:List>
                         </ui:MultipleAssign.AssignOperations>
                       </ui:MultipleAssign>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[ExceptionTask]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
                       <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -322,7 +354,7 @@
                 </Catch>
               </TryCatch.Catches>
               <TryCatch.Finally>
-                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="513,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -334,7 +366,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="513,287" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="513,344" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -363,6 +395,14 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[ExceptionTask]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
             <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="EXCEL">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -374,6 +414,14 @@
           </Sequence>
         </If.Else>
       </If>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Valida si existe: &quot; + WorkBookLayout_NC]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
       <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Layout NC" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[WorkBookLayout_NC]" PathType="File">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -390,21 +438,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="549,1115" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,108" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch INPUT_NC" sap:VirtualizedContainerService.HintSize="515,1055" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch DisplayName="Try Catch INPUT_NC" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,457" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,514" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -424,24 +472,22 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;CopiarLayout.vbs&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
                   <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\CopiarLayout.vbs" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_2" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
                     <ui:InvokeVBScript.Arguments>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="8">
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + WorkBookLayout_NC + &quot;&quot;&quot;&quot;" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + WorkBookRefacturacion + &quot;&quot;&quot;&quot;" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + Sheet + &quot;&quot;&quot;&quot;" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + Anio + &quot;&quot;&quot;&quot;" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&quot;&quot; + Mes + &quot;&quot;&quot;&quot;" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String">["""" + WorkBookLayout_NC + """"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["""" + WorkBookRefacturacion + """"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["""" + Sheet + """"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["""" + Anio + """"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["""" + Mes + """"]</InArgument>
                       </scg:List>
                     </ui:InvokeVBScript.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
@@ -494,7 +540,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,344" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,401" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -523,6 +569,14 @@
                           </scg:List>
                         </ui:MultipleAssign.AssignOperations>
                       </ui:MultipleAssign>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[ExceptionTask]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
                       <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -549,14 +603,14 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="549,287" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="513,344" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="515,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -578,7 +632,15 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="515,48" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="EXCEL">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[ExceptionTask]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="EXCEL">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -597,12 +659,20 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,286" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="513,343" sap2010:WorkflowViewState.IdRef="Sequence_20">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Run_Macro.vbs&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
             <ui:InvokeVBScript TimeoutMS="{x:Null}" DisplayName="Invoke VBScript" FileName=".scripts\Run_Macro.vbs" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="InvokeVBScript_3" KillOnTimeout="False" Result="[vbsResult]" RunInBatchMode="True" UnicodeSupport="True" WaitForOutput="True">
               <ui:InvokeVBScript.Arguments>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
@@ -655,7 +725,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,287" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,344" sap2010:WorkflowViewState.IdRef="Sequence_25">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -677,12 +747,20 @@
                           <OutArgument x:TypeArguments="x:String">[ExceptionTask]</OutArgument>
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Task: Timbrado_Inputs"  + " Run_Macro.vbs " + WorkBookLayout_NC]</InArgument>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Task: Timbrado_Inputs"  + " Run_Macro.vbs " + WorkBookRefacturacion]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[ExceptionTask]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
                 <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process EXCEL" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="KillProcess_6" ProcessName="EXCEL">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

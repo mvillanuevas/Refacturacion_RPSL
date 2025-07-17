@@ -1,18 +1,18 @@
 On Error Resume Next
 
-Set objArgs = WScript.Arguments
+'Set objArgs = WScript.Arguments
 
-WorkbookPathRexmex = objArgs(0)
-WorkbookPathRef = objArgs(1)
-ActualMonth = CInt(objArgs(2))
-TipoDocto = objArgs(3)
-anio = CInt(objArgs(4))
+'WorkbookPathRexmex = objArgs(0)
+'WorkbookPathRef = objArgs(1)
+'ActualMonth = CInt(objArgs(2))
+'TipoDocto = objArgs(3)
+'anio = CInt(objArgs(4))
 
-'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725.xlsx"
-'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
-'ActualMonth = 6
-'TipoDocto = "=NC"
-'anio = 2025
+WorkbookPathRexmex = "C:\RPA_Process\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725 - Copy.xlsx"
+WorkbookPathRef = "C:\RPA_Process\Refacturacion_Test\Layout refacturación.xlsx"
+ActualMonth = 6
+TipoDocto = "<>NC"
+anio = 2025
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -47,6 +47,8 @@ If SheetExists(objWorkbookPathRef, "Template") Then
 End If
 
 objWorkbookSheetRexmex.ShowAllData
+
+flag = ReemplazarGuionesSimilares(objWorkbookSheetRexmex, 56)
 
 ' Referencia a la hoja de Layout refacturación
 Set objWorkbookSheetRefL = objWorkbookPathRef.Worksheets(WorkbookSheetLayout)
@@ -190,4 +192,27 @@ Function SheetExists(wb, sheetName)
             Exit Function
         End If
     Next
+End Function
+
+Function ReemplazarGuionesSimilares(objHoja, columnaObjetivo)
+
+    ' Obtener última fila usada en la columna deseada
+    lastRow = objHoja.Cells(objHoja.Rows.Count, columnaObjetivo).End(-4162).Row ' -4162 = xlUp
+
+    ' Caracteres similares a guión
+    guionesSimilares = Array("–", "—", "?", "?", ChrW(8208), ChrW(8211), ChrW(8212), ChrW(8722))
+
+    For i = 2 To lastRow
+        celda = objHoja.Cells(i, columnaObjetivo).Value
+
+        If Not IsEmpty(celda) Then
+            For Each g In guionesSimilares
+                If InStr(celda, g) > 0 Then
+                    celda = Replace(celda, g, "-") ' Reemplaza el guión similar por un guión normal
+                End If
+            Next
+            objHoja.Cells(i, columnaObjetivo).Value = celda
+        End If
+    Next
+    ReemplazarGuionesSimilares = True
 End Function

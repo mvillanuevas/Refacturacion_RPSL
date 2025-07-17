@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PZwq6rU_IkiHPf_J3vrWgg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="70, 78, 58, 17" ElementType="RadioButton" FullSelectorArgument="&lt;wnd ctrlname='grpContrato' /&gt;&lt;wnd ctrlname='rdbRepsol' /&gt;" Guid="8667e79e-1361-453b-b538-877c19f66055" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="68fa070d20bea2c49ca43d52bda8d366.png" xmlns="">0CAc08RIsnEWl4R7ekomPEw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

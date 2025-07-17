@@ -62,7 +62,7 @@ For i = LBound(proveedores) To UBound(proveedores)
         Dim longcell
         For Each cell In objWorkbookSheetRefL.Range("E" & pasteLastRow & ":E" & pasteLastRow + copyLastRow - 2)
             ' Si el valor de la celda contiene el valor "pep" restar 3 a la longitud del valor de la celda
-            If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
+            If InStr(1, cell.Value, "*pep", vbTextCompare) > 0 Then
                 longcell = Len(cell.value) - 3
             Else
                 longcell = Len(cell.Value)

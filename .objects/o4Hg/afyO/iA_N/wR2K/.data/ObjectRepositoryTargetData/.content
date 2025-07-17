@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OFT-z1w3dEmZZDH7SGKnMA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="0ef2255a-9884-462a-8d78-22703a090e53" CvElementArea="19, 184, 499, 27" CvType="InputBox" DesignTimeRectangle="22, 191, 73, 13" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='lblMensaje' /&gt;" Guid="e3549238-8b2c-4af6-b3f2-35887375f90f" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="0ef2255a-9884-462a-8d78-22703a090e53" CvElementArea="19, 184, 499, 27" CvType="InputBox" DesignTimeRectangle="18, 184, 500, 26" FuzzySelectorArgument="&lt;wnd ctrlname='prBar' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='45%' /&gt;" Guid="6c44f5d6-2e86-4d82-b47d-450d7bcd9d9b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="eda2c2a17a290644003945e6d876bd0c.png" xmlns="">0fqsayoH6Ak-sLopFiGkXiw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

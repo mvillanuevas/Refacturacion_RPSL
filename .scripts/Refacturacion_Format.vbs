@@ -95,8 +95,8 @@ If saveLastRow >= 7 Then
     Dim cell
     For Each cell In objWorkbookSheetRefLN.Range("E" & saveLastRow & ":E" & LastRow)
         If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
-            If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
-                posicion = InStr(1, cell.Value, "pep", vbTextCompare) - 1
+            If InStr(1, cell.Value, "*pep", vbTextCompare) > 0 Then
+                posicion = InStr(1, cell.Value, "*pep", vbTextCompare) - 1
                 cell.Value = Left(cell.Value, posicion)
             End If
         End If
@@ -104,8 +104,8 @@ If saveLastRow >= 7 Then
 
     For Each cell In objWorkbookSheetRefLN.Range("F" & saveLastRow & ":F" & LastRow)
         If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
-            If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
-                posicion = InStr(1, cell.Value, "pep", vbTextCompare) - 1
+            If InStr(1, cell.Value, "*pep", vbTextCompare) > 0 Then
+                posicion = InStr(1, cell.Value, "*pep", vbTextCompare) - 1
                 cell.Value = Left(cell.Value, posicion)
             End If
         End If
@@ -113,8 +113,8 @@ If saveLastRow >= 7 Then
 
     For Each cell In objWorkbookSheetRefLN.Range("L" & saveLastRow & ":L" & LastRow)
         If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
-            If InStr(1, cell.Value, "pep", vbTextCompare) > 0 Then
-                posicion = InStr(1, cell.Value, "pep", vbTextCompare) - 1
+            If InStr(1, cell.Value, "*pep", vbTextCompare) > 0 Then
+                posicion = InStr(1, cell.Value, "*pep", vbTextCompare) - 1
                 cell.Value = Left(cell.Value, posicion)
             End If
         End If

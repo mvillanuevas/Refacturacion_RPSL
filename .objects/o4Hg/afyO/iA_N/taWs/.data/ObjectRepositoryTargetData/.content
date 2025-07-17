@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="CnwnEIIY10OVBrXVzqe9lQ" Reference="LlLgfoQpLUq-tToeno2L6w/taWsbh5dHUGdnET3ZAEGKQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="22, 191, 73, 13" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='lblMensaje' /&gt;" Guid="990580f1-87b0-4e92-baaf-ac385876f34b" ScopeSelectorArgument="&lt;wnd app='eytimbrado.exe' ctrlname='frmTimbrado' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="43b4ce6e47fe1d7e14fb94a8df51054d.png" xmlns="">0OeSkENTvt0Orw6l41xMFTA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

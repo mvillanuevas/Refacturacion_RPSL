@@ -21,9 +21,9 @@ hojaOrigenNombre = "Layout_Copy"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = True
+objExcel.Application.Visible = False
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = True
+objExcel.Application.ScreenUpdating = False
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
@@ -72,6 +72,9 @@ wsDestino.Range("AM2:AM" & lastRow).Value = anio ' Columna AM con el año actual
 wsDestino.Range("AN2:AN" & lastRow).Value = mes ' Columna AN con el mes actual
 wsDestino.Range("AO2:AO" & lastRow).Formula = "=ROW()-1" ' Columna AO con un consecutivo
 wsDestino.Range("AP2:AP" & lastRow).Value = 1 ' Columna AP con el valor 1
+
+wsDestino.Range("M2:M" & lastRow).NumberFormat = "dd/mm/yyyy"
+wsDestino.Range("AH2:AH" & lastRow).NumberFormat = "dd/mm/yyyy"
 
 ' Guardar y cerrar
 wbOrigen.Save

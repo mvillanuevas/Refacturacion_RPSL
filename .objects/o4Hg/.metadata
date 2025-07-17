@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Timbrado CFDI",
+  "Type": "App",
+  "Id": "o4Hg1drodUOCyYHRcQpkDg",
+  "Reference": "LlLgfoQpLUq-tToeno2L6w/o4Hg1drodUOCyYHRcQpkDg",
+  "Created": "2025-07-16T15:51:54.2234373Z",
+  "Updated": "2025-07-16T15:51:54.2234373Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
