@@ -74,7 +74,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1212,1429" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1093,1663" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExceptionTask" />
       <Variable x:TypeArguments="x:Boolean" Name="StatusTask" />
@@ -101,7 +101,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Refacturacion_Test\Layout refacturación Junio 2025_FACT.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\Layout refacturación may-25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -109,7 +109,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout_NC]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Refacturacion_Test\Layout refacturación Junio 2025_NC.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\01_Layout refacturación notas de credito may-25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -125,7 +125,7 @@
               <OutArgument x:TypeArguments="x:String">[Mes]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">6</InArgument>
+              <InArgument x:TypeArguments="x:String">5</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -141,7 +141,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkbookPathOH]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Refacturacion_Test\REXM - Overhead facturable Junio 2025.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\REXM - Overhead facturable may25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -178,6 +178,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="WorkBookRefacturacion">[WorkBookRefacturacion]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="479,117" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;Pause&quot;]" />
     <If Condition="[Not StatusTask]" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -279,6 +280,7 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="479,117" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;Pause&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Timbrado_CFDI - Invoke Workflow File (Procesos\Timbrado_CFDI.xaml)" sap:VirtualizedContainerService.HintSize="479,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Procesos\Timbrado_CFDI.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="flagError">[flagError]</OutArgument>

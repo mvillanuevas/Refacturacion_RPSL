@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import requests
 from datetime import datetime, timedelta
+import os
 
 def get_tdc_banxico():
     # !Obtiene los tipos de cambio del Banco de México para EUR/USD, EUR/MXN, GBP/USD y GBP/MXN.
@@ -125,3 +127,19 @@ def get_tdc_banxico_usd():
         return f"{tc};{tdc}"
     else:
         return f"Error en consulta de ayer: {response_ayer.status_code}"
+    
+# Ejecutar ambas funciones y guardar los resultados en un archvivo txt con salto de línea
+if __name__ == "__main__":
+    tdc_banxico = get_tdc_banxico()
+    tdc_banxico_usd = get_tdc_banxico_usd()
+    
+    # Obtener la ruta de este script
+    ruta_actual = os.path.dirname(os.path.abspath(__file__))
+    
+    # Escribir los resultados en un archivo de texto
+    try:
+        with open(os.path.join(ruta_actual, "tipos_de_cambio_usd.txt"), "w", encoding="utf-8") as archivo:
+            archivo.write(tdc_banxico + "\n" + tdc_banxico_usd)
+        print("Archivo 'tipos_de_cambio_usd.txt' creado exitosamente.")
+    except Exception as e:
+        print(f"Error al crear el archivo: {e}")

@@ -19,9 +19,9 @@ WorkbookSheetLayout = "Layout"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = True
+objExcel.Application.Visible = False
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = True
+objExcel.Application.ScreenUpdating = False
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
@@ -157,8 +157,10 @@ For i = LBound(proveedores) To UBound(proveedores)
         ' T (col 20)
         objWorkbookSheetRefL.Range("T7").AutoFill objWorkbookSheetRefL.Range("T7:T" & fillLastRow)
         ' U (col 21)
+        objWorkbookSheetRefL.Range("U7").FormulaR1C1 = "=IF(RC[-19]=" & Chr(34) & "PC CARIGALI" & Chr(34) & ",SUMIF(BL29!C[12],Layout!RC[-16],BL29!C[-1])+SUMIF(BL29!C[12],Layout!RC[-15],BL29!C[-1]),IF(RC[-19]=" & Chr(34) & "PTTEP" & Chr(34) & ",SUMIF(BL29!C[12],Layout!RC[-16],BL29!C[3])+SUMIF(BL29!C[12],Layout!RC[-15],BL29!C[3]),IF(RC[-19]=" & Chr(34) & "SIERRA NEVADA" & Chr(34) & ",SUMIF(BL29!C[12],Layout!RC[-16],BL29!C[5])+SUMIF(BL29!C[12],Layout!RC[-15],BL29!C[5]),SUMIF(BL29!C[12],Layout!RC[-16],BL29!C[-5])+SUMIF(BL29!C[12],Layout!RC[-15],BL29!C[-5]))))"
         objWorkbookSheetRefL.Range("U7").AutoFill objWorkbookSheetRefL.Range("U7:U" & fillLastRow)
         ' Q (col 17)
+        objWorkbookSheetRefL.Range("Q7").FormulaR1C1 = "=IF(RC[-15]=" & Chr(34) & "PC CARIGALI" & Chr(34) & ",SUMIF(BL29!C[16],Layout!RC[-12],BL29!C[2])+SUMIF(BL29!C[16],Layout!RC[-11],BL29!C[2]),IF(RC[-15]=" & Chr(34) & "PTTEP" & Chr(34) & ",SUMIF(BL29!C[16],Layout!RC[-12],BL29!C[6])+SUMIF(BL29!C[16],Layout!RC[-11],BL29!C[6]),IF(RC[-15]=" & Chr(34) & "SIERRA NEVADA" & Chr(34) & ",SUMIF(BL29!C[16],Layout!RC[-12],BL29!C[8])+SUMIF(BL29!C[16],Layout!RC[-11],BL29!C[8]),SUMIF(BL29!C[16],Layout!RC[-12],BL29!C[-2])+SUMIF(BL29!C[16],Layout!RC[-11],BL29!C[-2]))))"
         objWorkbookSheetRefL.Range("Q7").AutoFill objWorkbookSheetRefL.Range("Q7:Q" & fillLastRow)
         ' W (col 23s)
         objWorkbookSheetRefL.Range("W7").AutoFill objWorkbookSheetRefL.Range("W7:W" & fillLastRow)

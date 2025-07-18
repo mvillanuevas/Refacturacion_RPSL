@@ -5,10 +5,12 @@ Set objArgs = WScript.Arguments
 WorkbookPathRexmex = objArgs(0)
 WorkbookPathRef = objArgs(1)
 ActualMonth = objArgs(2)
+TipoDocto = objArgs(3)
 
-'WorkbookPathRexmex = "C:\RPA_Process\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725 - Copy.xlsx"
-'WorkbookPathRef = "C:\RPA_Process\Refacturacion_Test\Layout refacturación.xlsx"
+'WorkbookPathRexmex = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\REXMEX - Cuenta Operativa 2025_080725.xlsx"
+'WorkbookPathRef = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\4 - Abril\Files\Refacturacion_Test\Layout refacturación.xlsx"
 'ActualMonth = 6
+'TipoDocto = "Factura"
 
 WorkbookSheetRexmex = "Cuenta Operativa"
 WorkbookSheetLayout = "Layout"
@@ -100,15 +102,21 @@ If lastRow > 1 Then
         End If
     Next
 
-    ' Itera sobre la columna AA y oculta las filas que tenga valores negativos
-    Dim cell
-    For Each cell In objWorkbookSheetRef.Range("AA2:AA" & lastRow).SpecialCells(12) ' 12 = xlCellTypeVisible
-        If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
-            If cell.Value < 0 Then
-                cell.EntireRow.Hidden = True
+    If TipoDocto = "Factura" Then
+        ' Itera sobre la columna AA y oculta las filas que tenga valores negativos
+        Dim cell
+        For Each cell In objWorkbookSheetRef.Range("AA2:AA" & lastRow)
+            If Not IsEmpty(cell.Value) And Not IsNull(cell.Value) Then
+                If cell.Value < 0 Then
+                    If InStr(1, cell.offset(0, 6).Value, "*pep", vbTextCompare) > 0 Then
+                        posicion = InStr(1, cell.offset(0, 6).Value, "*pep", vbTextCompare) - 1
+                        cell.offset(0, 6).Value = Left(cell.offset(0, 6).Value, posicion)
+                    End If
+                    cell.EntireRow.Hidden = True
+                End If
             End If
-        End If
-    Next
+        Next
+    End If
 Else
     On Error GoTo 0
 End If

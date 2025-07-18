@@ -20,9 +20,9 @@ WorkbookSheetLayout = "Layout"
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = True
+objExcel.Application.Visible = False
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = True
+objExcel.Application.ScreenUpdating = False
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
@@ -125,29 +125,6 @@ If saveLastRow >= 7 Then
     objWorkbookSheetRefLN.Range("AH7:AH" & LastRow).NumberFormat = "dd/mm/yyyy"
 
     refacturacionSheets = Array("BL29", "BL10", "BL11", "BL14")
-    ' Iteraer sobre las hojas de refacturación y eliminar el contenido desde la fila 2 hasta la última fila
-    Dim i
-
-    For i = LBound(refacturacionSheets) To UBound(refacturacionSheets)
-        Dim sheetName
-        sheetName = refacturacionSheets(i)
-        
-        ' Verificar si la hoja existe en el libro de refacturación
-        If SheetExists(objWorkbookPathRef, sheetName) Then
-            Set objWorkbookSheetRef = objWorkbookPathRef.Worksheets(sheetName)
-            
-            ' Encontrar la última fila con datos en la hoja de Layout refacturación
-            lastRow = objWorkbookSheetRef.Cells(objWorkbookSheetRef.Rows.Count, 1).End(-4162).Row ' -4162 = xlUp
-            
-            ' Limpiar el contenido desde la fila 2 hasta la última fila
-            If lastRow > 1 Then
-                'objWorkbookSheetRef.Range("A2:AV" & lastRow).ClearContents
-            End If
-            
-            ' Quitar el modo de corte/copia
-            objExcel.CutCopyMode = False
-        End If
-    Next
 Else
     On Error GoTo 0
 End If
