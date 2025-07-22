@@ -168,6 +168,17 @@ objWorkbookSheetGH.Range("EQ2").AutoFill objWorkbookSheetGH.Range("EQ2:EQ" & las
 ' AutoFill de la columna ER - IA
 objWorkbookSheetGH.Range("ER2:IA2").AutoFill objWorkbookSheetGH.Range("ER2:IA" & lastRowGHH)
 
+' Ordenar de manera ascendente la columna C de la hoja objWorkbookSheetLayout
+With objWorkbookSheetLayout.Sort
+    .SortFields.Clear
+    .SortFields.Add objWorkbookSheetLayout.Range("C2"), 0, 1  ' 0 = xlSortOnValues, 1 = xlAscending
+    .SetRange objWorkbookSheetLayout.Range("A1", objWorkbookSheetLayout.Cells(lastRow, 67))
+    .Header = 1  ' xlYes (Con encabezados)
+    .MatchCase = False
+    .Orientation = 1 ' xlTopToBottom
+    .Apply
+End With
+
 ' Guardar y cerrar el libro de refacturación
 objWorkbookPathRef.Save
 objWorkbookPathRef.Close

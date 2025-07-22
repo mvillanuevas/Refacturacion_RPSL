@@ -15,9 +15,9 @@ hojaNombre = "TC"                   ' Nombre de la hoja
 Set objExcel = CreateObject("Excel.Application")
 
 'Parámetro para indicar si se quiere visible la aplicación de Excel
-objExcel.Application.Visible = True
+objExcel.Application.Visible = False
 'Evita movimiento de pantalla
-objExcel.Application.ScreenUpdating = True
+objExcel.Application.ScreenUpdating = False
 'Parámetro evitar mostrar pop ups de Excel
 objExcel.Application.DisplayAlerts = False
 
@@ -31,7 +31,6 @@ ultimaFila = objSheet.Cells(objSheet.Rows.Count, 1).End(-4162).Row
 ' Obtener valor de la columna A de la última fila
 valorUltimaFila = objSheet.Cells(ultimaFila, 1).Value
 
-MsgBox "El valor de la última fila es: " & valorUltimaFila
 
 ' === Guardar y cerrar ===
 objWorkbook.Save
