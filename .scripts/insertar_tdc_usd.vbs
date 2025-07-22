@@ -2,17 +2,12 @@ On Error Resume Next
 
 Set objArgs = WScript.Arguments
 
-fecha = objArgs(0)
-valorDetermina = objArgs(1)
-valorDOF = objArgs(2)
-valorSolventa = objArgs(3)
-WorkbookRefacturacion = objArgs(4)
+WorkbookRefacturacion = objArgs(0)
+WorkbookTDC = objArgs(1)
 
-'fecha = "09/07/2025"
-'valorDetermina = 18.5733
-'valorDOF = 18.7140
-'valorSolventa = 18.6698
+
 'WorkbookRefacturacion = "C:\Users\HE678HU\OneDrive - EY\.Repsol\Reporte Regulatorio\Timbrado\Refacturacion_regular_v2.xlsx"
+'WorkbookTDC = "C:\ReporteRegulatorioRpa\Temp\TipoCambio.xls"
 
 
 'Genera un objeto de tipo Excel Application
@@ -31,23 +26,28 @@ WorkbookSheetRefacturacion = "TC"
 Set objWorkbookPathRefacturacion = objExcel.Workbooks.Open(WorkbookRefacturacion, 0)
 Set objWorkbookSheetRefacturacion = objWorkbookPathRefacturacion.Worksheets(WorkbookSheetRefacturacion)
 
-existe = False
-fila = 2
+'Abre libro Excel de tipo cambio
+Set objWorkbookPathTDC = objExcel.Workbooks.Open(WorkbookTDC, 0)
+Set objWorkbookSheetTDC = objWorkbookPathTDC.Worksheets(1)
 
-Do While objWorkbookSheetRefacturacion.Cells(fila, 1).Value <> ""
-    If CStr(objWorkbookSheetRefacturacion.Cells(fila, 1).Value) = CStr(fecha) Then
-        existe = True
-        Exit Do
+valorBusqueda = "Información diaria"                 ' Valor a buscar
+
+' === Buscar valor en la hoja ===
+Set celda = objWorkbookSheetTDC.Cells.Find(valorBusqueda)
+
+If Not celda Is Nothing Then
+    fila = celda.Row
+    If fila >= 1 Then
+        objWorkbookSheetTDC.Range("A1:A" & fila).EntireRow.Delete
     End If
-    fila = fila + 1
-Loop
-
-If Not existe Then
-    objWorkbookSheetRefacturacion.Cells(fila, 1).Value = fecha
-    objWorkbookSheetRefacturacion.Cells(fila, 2).Value = valorDetermina
-    objWorkbookSheetRefacturacion.Cells(fila, 3).Value = valorDOF
-    objWorkbookSheetRefacturacion.Cells(fila, 4).Value = valorSolventa
 End If
+
+' ultima fila con datos
+ultimaFila = objWorkbookSheetRefacturacion.Cells(objWorkbookSheetRefacturacion.Rows.Count, 1).End(-4162).Row + 1
+
+' copiar datos de tipo cambio
+objWorkbookSheetTDC.Range("A3:D" & objWorkbookSheetTDC.Cells(objWorkbookSheetTDC.Rows.Count, 1).End(-4162).Row).Copy
+objWorkbookSheetRefacturacion.Cells(ultimaFila + 1, 1).PasteSpecial xlPasteValues
 
 ' Guardar y cerrar el libro
 objWorkbookPathRefacturacion.Save

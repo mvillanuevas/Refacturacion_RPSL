@@ -153,8 +153,20 @@ Next
 ' Formato fecha columna 4
 objWorkbookSheetGH.Range("D2:D" & lastRowGHH).NumberFormat = "dd/mm/yyyy"
 
-' Autofill de las formulas de la fila 2, columnas BR - IA
-objWorkbookSheetGH.Range("BR2:IA2").AutoFill objWorkbookSheetGH.Range("BR2:IA" & lastRowGHH)
+' Autofill de la columna BR
+objWorkbookSheetGH.Range("BR2").AutoFill objWorkbookSheetGH.Range("BR2:BR" & lastRowGHH)
+' AutoFill de la columna BS - BT
+objWorkbookSheetGH.Range("BS2:BT2").AutoFill objWorkbookSheetGH.Range("BS2:BT" & lastRowGHH),4
+' AutoFill de la columna BU - CJ
+objWorkbookSheetGH.Range("BU2:CJ2").AutoFill objWorkbookSheetGH.Range("BU2:CJ" & lastRowGHH)
+' AutoFill de la columna CK
+objWorkbookSheetGH.Range("CK2").AutoFill objWorkbookSheetGH.Range("CK2:CK" & lastRowGHH), 4
+' AutoFill de la columna CL - EP
+objWorkbookSheetGH.Range("CL2:EP2").AutoFill objWorkbookSheetGH.Range("CL2:EP" & lastRowGHH)
+' AutoFill de la columna EQ
+objWorkbookSheetGH.Range("EQ2").AutoFill objWorkbookSheetGH.Range("EQ2:EQ" & lastRowGHH), 4
+' AutoFill de la columna ER - IA
+objWorkbookSheetGH.Range("ER2:IA2").AutoFill objWorkbookSheetGH.Range("ER2:IA" & lastRowGHH)
 
 ' Guardar y cerrar el libro de refacturación
 objWorkbookPathRef.Save
