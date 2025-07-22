@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Element 'Tipo de cambio para sol…'",
+  "Type": "Element",
+  "Id": "mGqb5g9-Ck2vu0XzGv9xrA",
+  "Reference": "LlLgfoQpLUq-tToeno2L6w/mGqb5g9-Ck2vu0XzGv9xrA",
+  "ParentRef": "LlLgfoQpLUq-tToeno2L6w/y84VaAPiKUCl6I1dn0GgEQ",
+  "Created": "2025-07-21T23:49:29.8615921Z",
+  "Updated": "2025-07-21T23:49:29.8615921Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

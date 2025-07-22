@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge SIE - Mercado cambiario",
+  "Type": "App",
+  "Id": "azPMJeDteUm2khGSkLNDNw",
+  "Reference": "LlLgfoQpLUq-tToeno2L6w/azPMJeDteUm2khGSkLNDNw",
+  "Created": "2025-07-21T23:39:20.455197Z",
+  "Updated": "2025-07-21T23:39:20.455197Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

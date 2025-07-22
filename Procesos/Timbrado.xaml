@@ -74,7 +74,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1093,1663" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado" sap:VirtualizedContainerService.HintSize="1093,1600" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExceptionTask" />
       <Variable x:TypeArguments="x:Boolean" Name="StatusTask" />
@@ -101,7 +101,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\Layout refacturación may-25.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\Layout refacturación jun-25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -109,7 +109,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkBookLayout_NC]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\01_Layout refacturación notas de credito may-25.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\Layout refacturación notas de credito jun-25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -125,7 +125,7 @@
               <OutArgument x:TypeArguments="x:String">[Mes]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">5</InArgument>
+              <InArgument x:TypeArguments="x:String">6</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -141,7 +141,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkbookPathOH]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\REXM - Overhead facturable may25.xlsx</InArgument>
+              <InArgument x:TypeArguments="x:String">C:\RPA_Process\Timbrado\Input\REXM - Overhead facturable jun25.xlsx</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -149,7 +149,7 @@
               <OutArgument x:TypeArguments="x:String">[Periodo]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Mayo 2025</InArgument>
+              <InArgument x:TypeArguments="x:String">Junio 2025</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -163,7 +163,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Inicia Timbrado&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,84" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Inicia Timbrado&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -178,8 +178,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="WorkBookRefacturacion">[WorkBookRefacturacion]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="479,117" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;Pause&quot;]" />
-    <If Condition="[Not StatusTask]" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[Not StatusTask]" sap:VirtualizedContainerService.HintSize="479,84" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

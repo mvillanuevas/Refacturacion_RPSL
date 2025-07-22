@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qlk9iIQKUE2A_OnPAWoOKw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="banxico.org.mx/tipcamb/tipCamMIAction.do" CVScreenId="aa1ed9c9-7d72-4608-8055-0d5315dbbd55" CvElementArea="135, 92, 67, 24" CvTextArea="148, 99, 40, 11" CvTextArgument="Save as" CvType="Button" DesignTimeRectangle="135, 93, 66, 22" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='What do you want to do with tipoCambio (1).xls? Open Save as Sav*' role='outline item' /&gt;&lt;ctrl name='Save as' role='push button' /&gt;" Guid="31ef2799-4c83-47a2-8153-3aa5c8c0fddc" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="aa1ed9c9-7d72-4608-8055-0d5315dbbd55" DesignTimeRectangle="73, 73, 259, 16" ElementType="Text" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='What do you want to do with tipoCambio (1).xls? Open Save as Sav*' role='outline item' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='What do you want to do with tipoCambio (1).xls?' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='What do you want to do with tipoCambio (1).xls?' /&gt;" Guid="9770dd7f-94c0-478a-a06c-abb1341b5193" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f1b3df1fe8f4c8552f6417d27bcd20b0.png" xmlns="">0ReH_E_gixkeAJElfBPAgCw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

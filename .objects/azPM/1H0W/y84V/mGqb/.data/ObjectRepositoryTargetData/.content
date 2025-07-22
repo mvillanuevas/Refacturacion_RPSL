@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yf-8mm_HEUW4OGFpXSzVQg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="banxico.org.mx/tipcamb/tipCamMIAction.do" DesignTimeRectangle="12, 127, 1912, 893" FullSelectorArgument="&lt;webctrl tag='BODY' /&gt;" Guid="137a9b36-059f-452e-9252-041d2df8d10e" ScopeSelectorArgument="&lt;html app='msedge.exe' title='SIE - Mercado cambiario' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8c25b166276c8279eda04a8416fb2755.png" xmlns="">0kZsNxAmTxE2Z8UapNWxqrQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">KeyboardShortcut</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

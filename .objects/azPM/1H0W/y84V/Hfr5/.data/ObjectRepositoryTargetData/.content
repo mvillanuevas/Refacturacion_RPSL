@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="a4CSvbzT90m6dl__eozqYg" Reference="LlLgfoQpLUq-tToeno2L6w/Hfr5eKd9YEaykiDUrOFafQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="banxico.org.mx/tipcamb/tipCamMIAction.do" CVScreenId="f547040e-8330-43b9-b01a-57651ff373c6" CvElementArea="135, 92, 67, 24" CvTextArea="148, 99, 40, 11" CvTextArgument="Save as" CvType="Button" DesignTimeRectangle="135, 93, 66, 22" ElementType="Button" FullSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='What do you want to do with*' role='outline item' /&gt;&lt;ctrl name='Save as' role='push button' text='Save as' /&gt;" Guid="188b3a61-f5cd-452b-b9a1-83e8dc6f6579" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="f547040e-8330-43b9-b01a-57651ff373c6" DesignTimeRectangle="73, 73, 259, 16" ElementType="Text" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='What do you want to do with tipoCambio (1).xls? Open Save as Sav*' role='outline item' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='What do you want to do with tipoCambio (1).xls?' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='What do you want to do with tipoCambio (1).xls?' /&gt;" Guid="57a0bcef-77a8-4c3c-9bfc-cb445f043b83" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f1b3df1fe8f4c8552f6417d27bcd20b0.png" xmlns="">0xaK3RVVkZUW6Pj2EN0AbMw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

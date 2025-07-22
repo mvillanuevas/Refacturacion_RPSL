@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Timbrado_TDC" sap:VirtualizedContainerService.HintSize="1093,781" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Timbrado_TDC" sap:VirtualizedContainerService.HintSize="1212,781" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Users\HE678HU\AppData\Local\miniconda3\python312.dll" Name="LibraryPath" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\HE678HU\AppData\Local\miniconda3" Name="Path" />
@@ -170,7 +170,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <TryCatch DisplayName="Try Catch TDC Python" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch TDC Extract" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <TryCatch.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="tdcFile" />
           <Variable x:TypeArguments="x:Boolean" Name="errorFile" />
@@ -281,9 +281,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:StartProcess>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not tdcFile]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,495" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,617" sap2010:WorkflowViewState.IdRef="Sequence_50">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,7 +299,7 @@
                   </ui:LogMessage>
                   <ui:FileExistsX DisplayName="File Exists TDC" Exists="[tdcFile]" sap:VirtualizedContainerService.HintSize="382,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path=".scripts\tipos_de_cambio_usd.txt" />
                   <ui:FileExistsX DisplayName="File Exists Error" Exists="[errorFile]" sap:VirtualizedContainerService.HintSize="382,165" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path=".scripts\output.txt" />
-                  <If Condition="[errorFile]" DisplayName="If Error" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="If_15">
+                  <If Condition="[errorFile]" DisplayName="If Error" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="If_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -326,11 +326,9 @@
                       </Sequence>
                     </If.Else>
                   </If>
+                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Delay_1" />
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
-              <ui:InterruptibleDoWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="not tdcFile" />
-              </ui:InterruptibleDoWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
