@@ -29,9 +29,7 @@
     {
       "Path": "Procesos/Timbrado_OH.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Folio&Sequence_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": null,
       "AddedNamespaces": null
